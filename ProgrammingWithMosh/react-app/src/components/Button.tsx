@@ -1,25 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface ButtonProps {
   children: React.ReactNode;
+  color?: string;
+  onClick?: () => void;
 }
-const Button = ({ children }: ButtonProps) => {
-  const [buttonColor, setButtonColor] = useState("btn-primary");
-  const handleClick = () => {
-    if (buttonColor === "btn-primary") {
-      setButtonColor("btn-secondary");
-    } else if (buttonColor === "btn-secondary") {
-      setButtonColor("btn-success");
-    } else if (buttonColor === "btn-success") {
-      setButtonColor("btn-danger");
-    } else {
-      setButtonColor("btn-primary");
-    }
-  };
+const Button = ({ children, onClick, color }: ButtonProps) => {
   return (
-    <div onClick={handleClick} className={`btn ${buttonColor}`}>
+    <button className={"btn btn-" + color} onClick={onClick}>
       {children}
-    </div>
+    </button>
   );
 };
 
