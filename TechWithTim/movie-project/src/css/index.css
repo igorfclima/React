@@ -19,8 +19,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   overflow-x: hidden;
 }
 
@@ -40,12 +39,11 @@ body {
 
 a {
   font-weight: 500;
-  color: #fff;
+  color: #646cff;
   text-decoration: inherit;
-  transition: 0.3s color ease-in-out;
 }
 a:hover {
-  color: #c2c2c2;
+  color: #535bf2;
 }
 
 h1 {
