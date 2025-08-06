@@ -1,0 +1,24 @@
+.favorites {
+  padding: 2rem;
+}
+
+.favorites h2 {
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.favorites-empty {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #aaa;
+}
+
+.favorites-empty h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.favorites-empty p {
+  font-size: 1.1rem;
+}
