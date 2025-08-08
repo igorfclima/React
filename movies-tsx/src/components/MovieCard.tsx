@@ -1,17 +1,37 @@
+// MovieCard.tsx
 import type { MouseEvent } from "react";
-import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
+import "../css/MovieCard.css";
+import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import type { MovieCardProps } from "../types/movie";
+import { useAlert } from "../contexts/AlertContext";
+import { FiAlertTriangle } from "react-icons/fi";
 
-function MovieCard({ movie }: MovieCardProps) {
+interface Props extends MovieCardProps {}
+
+function MovieCard({ movie }: Props) {
   const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
+  const { showAlert } = useAlert();
   const favorite = isFavorite(movie.id);
 
   function onFavoriteClick(e: MouseEvent<HTMLButtonElement>): void {
     e.preventDefault();
+
     if (favorite) {
+      showAlert({
+        message: "Favorito removido com sucesso",
+        title: "Removido",
+        color: "warning",
+        icon: FiAlertTriangle,
+      });
       removeFromFavorites(movie.id);
     } else {
+      showAlert({
+        message: "Favorito adicionado com sucesso",
+        title: "Adicionado",
+        color: "success",
+        icon: IoCheckmarkDoneCircleOutline,
+      });
       addToFavorites(movie);
     }
   }
