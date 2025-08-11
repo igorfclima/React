@@ -33,11 +33,11 @@ const Alert: React.FC<AlertProps> = ({
         display: "flex",
         alignItems: "center",
         gap: "0.5rem",
-        position: "fixed", // <-- Fixa no topo
-        top: "20px", // <-- Distância do topo
+        position: "fixed",
+        top: "20px",
         left: "50%",
-        transform: "translateX(-50%)", // <-- Centraliza horizontalmente
-        zIndex: 9999, // <-- Garante que fique por cima
+        transform: "translateX(-50%)",
+        zIndex: 9999,
       }}
     >
       {Icon && <Icon size={iconSize} />}
